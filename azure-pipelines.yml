@@ -4,8 +4,6 @@ trigger:
 pool:
   name: Self-hosted agent pool
   vmImage: 'ubuntu-latest'
-  demands:
-  - Agent.Version -gtVersion 2.160.0
 
 variables:
   BuildConfiguration: 'Release'
