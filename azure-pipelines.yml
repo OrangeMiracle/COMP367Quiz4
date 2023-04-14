@@ -1,0 +1,29 @@
+trigger:
+- main
+
+pool:
+  name: Self-hosted agent pool
+
+variables:
+  BuildConfiguration: 'Release'
+
+steps:
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: 'COMP367Quiz4/COM367Quiz4/COM367Quiz4.sln'
+    arguments: '--configuration $(BuildConfiguration)'
+  displayName: 'Build ASP.NET project'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: '**/*Tests.csproj'
+    arguments: '--configuration $(BuildConfiguration)'
+  displayName: 'Run unit tests'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'run'
+    workingDirectory: 'COMP367Quiz4/COM367Quiz4/COM367Quiz4'
+  displayName: 'Run ASP.NET project'
