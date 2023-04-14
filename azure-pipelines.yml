@@ -30,5 +30,5 @@ steps:
 
 agent:
   vmImage: 'ubuntu-latest'
-  agent: 'Hosted Agent'
+  name: 'Hosted Agent'
   version: '3.218.0'
