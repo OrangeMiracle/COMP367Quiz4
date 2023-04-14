@@ -27,8 +27,3 @@ steps:
     command: 'run'
     workingDirectory: 'COMP367Quiz4/COM367Quiz4/COM367Quiz4'
   displayName: 'Run ASP.NET project'
-
-agent:
-  vmImage: 'ubuntu-latest'
-  name: 'Hosted Agent'
-  version: '3.218.0'
